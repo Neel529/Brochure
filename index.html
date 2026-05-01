@@ -3,18 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amlaprash — B2B Product Brochure | Mapani Food Products</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Amlaprash — B2B Product System | Mapani Food Products</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;450;500;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #1a1a1a;
-            --secondary: #c9a84c;
-            --accent: #8b6914;
-            --light: #f8f6f1;
-            --muted: #6b6b6b;
-            --border: #e0ddd5;
-            --white: #ffffff;
-            --dark-bg: #1a1a1a;
+            --bg: #ffffff;
+            --bg-warm: #fafaf8;
+            --bg-cream: #f5f4f0;
+            --text: #1a1a1a;
+            --text-secondary: #4a4a4a;
+            --text-muted: #8a8a8a;
+            --text-light: #a0a0a0;
+            --gold: #b8954a;
+            --gold-light: #d4b76a;
+            --gold-pale: #f0e6cc;
+            --border: #e8e8e5;
+            --border-light: #f0f0ee;
+            --shadow: 0 4px 24px rgba(0,0,0,0.04);
+            --shadow-hover: 0 8px 32px rgba(0,0,0,0.08);
         }
 
         * {
@@ -23,958 +29,777 @@
             box-sizing: border-box;
         }
 
-        body {
-            font-family: 'Inter', sans-serif;
-            color: var(--primary);
-            background: var(--light);
-            line-height: 1.7;
-            -webkit-print-color-adjust: exact;
-            print-color-adjust: exact;
+        html {
+            scroll-behavior: smooth;
         }
 
-        /* ========== HERO SECTION ========== */
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text);
+            background: var(--bg);
+            line-height: 1.6;
+            font-size: 15.5px;
+            font-weight: 400;
+            -webkit-font-smoothing: antialiased;
+            letter-spacing: -0.01em;
+        }
+
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        /* ========== HERO ========== */
         .hero {
-            background: var(--dark-bg);
-            color: var(--white);
-            padding: 80px 60px 60px;
+            padding: 120px 0 100px;
+            background: var(--bg);
             position: relative;
-            overflow: hidden;
         }
 
         .hero::before {
             content: '';
             position: absolute;
-            top: -50%;
-            right: -20%;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(201,168,76,0.08) 0%, transparent 70%);
-            border-radius: 50%;
+            top: 0;
+            right: 0;
+            width: 45%;
+            height: 100%;
+            background: linear-gradient(160deg, var(--bg-cream) 0%, transparent 70%);
+            opacity: 0.6;
         }
 
         .hero-content {
-            max-width: 1100px;
-            margin: 0 auto;
             position: relative;
             z-index: 1;
         }
 
-        .company-tag {
-            display: inline-block;
+        .hero-tag {
             font-size: 11px;
             font-weight: 600;
             letter-spacing: 3px;
             text-transform: uppercase;
-            color: var(--secondary);
-            border: 1px solid rgba(201,168,76,0.3);
-            padding: 6px 16px;
-            margin-bottom: 30px;
+            color: var(--gold);
+            margin-bottom: 24px;
+            display: block;
         }
 
         .hero h1 {
             font-family: 'Playfair Display', serif;
             font-size: 52px;
-            font-weight: 700;
+            font-weight: 600;
             line-height: 1.15;
+            color: var(--text);
+            margin-bottom: 32px;
+            letter-spacing: -0.02em;
+        }
+
+        .hero h1 em {
+            font-style: italic;
+            color: var(--gold);
+        }
+
+        .hero-lead {
+            font-size: 20px;
+            line-height: 1.6;
+            color: var(--text-secondary);
+            font-weight: 400;
+            max-width: 560px;
             margin-bottom: 20px;
-            max-width: 700px;
         }
 
-        .hero h1 span {
-            color: var(--secondary);
-        }
-
-        .hero-subtitle {
+        .hero-closing {
+            font-family: 'Playfair Display', serif;
             font-size: 18px;
-            font-weight: 300;
-            color: rgba(255,255,255,0.7);
-            max-width: 600px;
+            font-style: italic;
+            color: var(--gold);
+            margin-top: 32px;
+            padding-top: 24px;
+            border-top: 1px solid var(--border);
+            display: inline-block;
+        }
+
+        /* ========== SECTIONS ========== */
+        .section {
+            padding: 80px 0;
+            position: relative;
+        }
+
+        .section-warm {
+            background: var(--bg-warm);
+        }
+
+        .section-cream {
+            background: var(--bg-cream);
+        }
+
+        .section-label {
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 16px;
+            display: block;
+        }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 34px;
+            font-weight: 600;
+            line-height: 1.25;
+            margin-bottom: 28px;
+            color: var(--text);
+            letter-spacing: -0.02em;
+        }
+
+        h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: var(--text);
+        }
+
+        p {
+            margin-bottom: 16px;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        p:last-child {
+            margin-bottom: 0;
+        }
+
+        strong {
+            font-weight: 500;
+            color: var(--text);
+        }
+
+        em {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+        }
+
+        /* ========== LISTS ========== */
+        ul.clean {
+            list-style: none;
+            margin: 24px 0;
+        }
+
+        ul.clean li {
+            padding: 10px 0;
+            padding-left: 24px;
+            position: relative;
+            color: var(--text-secondary);
             line-height: 1.6;
         }
 
-        .hero-stats {
-            display: flex;
-            gap: 50px;
-            margin-top: 50px;
-            padding-top: 30px;
-            border-top: 1px solid rgba(255,255,255,0.1);
+        ul.clean li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 18px;
+            width: 8px;
+            height: 1px;
+            background: var(--gold);
         }
 
-        .stat-item {
-            text-align: left;
+        ol.numbered {
+            list-style: none;
+            counter-reset: item;
+            margin: 24px 0;
         }
 
-        .stat-number {
+        ol.numbered li {
+            counter-increment: item;
+            padding: 12px 0;
+            padding-left: 36px;
+            position: relative;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        ol.numbered li::before {
+            content: counter(item, decimal-leading-zero);
+            position: absolute;
+            left: 0;
+            top: 12px;
             font-family: 'Playfair Display', serif;
-            font-size: 36px;
-            font-weight: 700;
-            color: var(--secondary);
-            line-height: 1;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--gold);
         }
 
-        .stat-label {
-            font-size: 12px;
-            color: rgba(255,255,255,0.5);
+        /* ========== CARDS ========== */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .card {
+            background: var(--bg);
+            border: 1px solid var(--border);
+            padding: 32px 28px;
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            border-color: var(--gold-pale);
+            box-shadow: var(--shadow-hover);
+            transform: translateY(-2px);
+        }
+
+        .card-tag {
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 12px;
+        }
+
+        .card-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            line-height: 1.3;
+        }
+
+        .card-sub {
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--text);
+            margin-bottom: 8px;
+        }
+
+        .card-desc {
+            font-size: 13.5px;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        /* ========== PROOF BLOCK ========== */
+        .proof-block {
+            background: var(--bg);
+            border: 1px solid var(--border);
+            padding: 48px;
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .proof-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 80px;
+            font-weight: 700;
+            color: var(--gold);
+            line-height: 1;
+            margin-bottom: 8px;
+            letter-spacing: -0.03em;
+        }
+
+        .proof-unit {
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+        }
+
+        .proof-caption {
+            font-size: 13px;
+            color: var(--text-light);
+        }
+
+        .proof-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-top: 40px;
+            padding-top: 32px;
+            border-top: 1px solid var(--border);
+        }
+
+        .proof-stat {
+            text-align: center;
+        }
+
+        .proof-stat-num {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--text);
+        }
+
+        .proof-stat-label {
+            font-size: 11px;
+            color: var(--text-muted);
             text-transform: uppercase;
             letter-spacing: 1.5px;
             margin-top: 6px;
         }
 
-        /* ========== SECTION STYLES ========== */
-        .section {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 60px;
-        }
-
-        .section-alt {
-            background: var(--white);
-        }
-
-        .section-header {
-            margin-bottom: 40px;
-        }
-
-        .section-number {
-            font-size: 11px;
-            font-weight: 600;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: var(--secondary);
-            margin-bottom: 10px;
-        }
-
-        .section-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 32px;
-            font-weight: 600;
-            line-height: 1.3;
-            color: var(--primary);
-        }
-
-        .section-body {
-            font-size: 15px;
-            color: var(--muted);
-            line-height: 1.8;
-        }
-
-        .section-body p {
-            margin-bottom: 16px;
-        }
-
-        .section-body strong {
-            color: var(--primary);
-            font-weight: 600;
-        }
-
-        /* ========== PROBLEM / SOLUTION ========== */
-        .problem-solution {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            margin-top: 30px;
-        }
-
-        .ps-card {
-            padding: 35px;
-            border: 1px solid var(--border);
-            background: var(--white);
-            position: relative;
-        }
-
-        .ps-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: var(--secondary);
-        }
-
-        .ps-card h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 20px;
-            margin-bottom: 15px;
-            color: var(--primary);
-        }
-
-        .ps-card p {
-            font-size: 14px;
-            color: var(--muted);
-            line-height: 1.7;
-        }
-
-        /* ========== JOURNEY TIMELINE ========== */
-        .journey-timeline {
-            position: relative;
-            padding-left: 30px;
-            margin-top: 30px;
-        }
-
-        .journey-timeline::before {
-            content: '';
-            position: absolute;
-            left: 6px;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background: var(--border);
-        }
-
-        .timeline-item {
-            position: relative;
-            padding-bottom: 30px;
-        }
-
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -28px;
-            top: 6px;
-            width: 14px;
-            height: 14px;
-            background: var(--secondary);
-            border-radius: 50%;
-            border: 3px solid var(--white);
-            box-shadow: 0 0 0 2px var(--secondary);
-        }
-
-        .timeline-year {
-            font-family: 'Playfair Display', serif;
-            font-size: 22px;
-            font-weight: 700;
-            color: var(--secondary);
-            margin-bottom: 5px;
-        }
-
-        .timeline-text {
-            font-size: 14px;
-            color: var(--muted);
-            line-height: 1.7;
-        }
-
-        .timeline-highlight {
-            background: var(--light);
-            padding: 20px 25px;
-            border-left: 3px solid var(--secondary);
-            margin-top: 10px;
-            font-size: 14px;
-            color: var(--primary);
-            font-weight: 500;
-        }
-
-        /* ========== AUDIENCE ========== */
-        .audience-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-            margin-top: 30px;
-        }
-
-        .audience-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 15px;
-            padding: 25px;
-            background: var(--white);
-            border: 1px solid var(--border);
-        }
-
-        .audience-icon {
-            width: 36px;
-            height: 36px;
-            background: var(--secondary);
-            color: var(--white);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            font-size: 14px;
-            flex-shrink: 0;
-            margin-top: 2px;
-        }
-
-        .audience-text {
-            font-size: 14px;
-            color: var(--muted);
-            line-height: 1.6;
-        }
-
-        /* ========== PARTNERSHIP MODELS ========== */
-        .models-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 25px;
-            margin-top: 30px;
-        }
-
-        .model-card {
-            background: var(--white);
-            border: 1px solid var(--border);
-            padding: 35px;
-            position: relative;
-            transition: all 0.3s ease;
-        }
-
-        .model-card:hover {
-            border-color: var(--secondary);
-            box-shadow: 0 10px 40px rgba(0,0,0,0.06);
-        }
-
-        .model-tag {
-            display: inline-block;
-            font-size: 10px;
-            font-weight: 600;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: var(--secondary);
-            border: 1px solid var(--secondary);
-            padding: 4px 12px;
-            margin-bottom: 15px;
-        }
-
-        .model-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 22px;
-            font-weight: 600;
-            margin-bottom: 15px;
-            color: var(--primary);
-        }
-
-        .model-desc {
-            font-size: 14px;
-            color: var(--muted);
-            line-height: 1.7;
-            margin-bottom: 20px;
-        }
-
-        .model-roles {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-        }
-
-        .role-block h4 {
-            font-size: 11px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            color: var(--secondary);
-            margin-bottom: 8px;
-        }
-
-        .role-block ul {
-            list-style: none;
-            font-size: 13px;
-            color: var(--muted);
-            line-height: 1.8;
-        }
-
-        .role-block ul li::before {
-            content: '— ';
-            color: var(--secondary);
-        }
-
-        /* ========== PROCESS STEPS ========== */
-        .process-steps {
+        /* ========== TIMELINE ========== */
+        .timeline {
             display: flex;
             justify-content: space-between;
-            gap: 20px;
+            gap: 16px;
             margin-top: 40px;
             position: relative;
         }
 
-        .process-steps::before {
+        .timeline::before {
             content: '';
             position: absolute;
             top: 24px;
             left: 60px;
             right: 60px;
-            height: 2px;
+            height: 1px;
             background: var(--border);
-            z-index: 0;
         }
 
-        .step {
+        .timeline-step {
             text-align: center;
             flex: 1;
             position: relative;
             z-index: 1;
         }
 
-        .step-number {
-            width: 50px;
-            height: 50px;
-            background: var(--white);
-            border: 2px solid var(--secondary);
-            color: var(--secondary);
+        .timeline-dot {
+            width: 48px;
+            height: 48px;
+            background: var(--bg);
+            border: 1.5px solid var(--border);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             font-family: 'Playfair Display', serif;
-            font-size: 18px;
-            font-weight: 700;
-            margin: 0 auto 15px;
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text-muted);
+            margin: 0 auto 12px;
         }
 
-        .step-text {
+        .timeline-step.active .timeline-dot {
+            border-color: var(--gold);
+            color: var(--gold);
+        }
+
+        .timeline-label {
             font-size: 13px;
-            color: var(--muted);
+            font-weight: 500;
+            color: var(--text);
+            margin-bottom: 4px;
+        }
+
+        .timeline-time {
+            font-size: 12px;
+            color: var(--gold);
             font-weight: 500;
         }
 
-        /* ========== CAPABILITY GRID ========== */
-        .capability-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-            margin-top: 30px;
-        }
-
-        .capability-card {
-            background: var(--white);
-            border: 1px solid var(--border);
-            padding: 30px;
-            text-align: center;
-        }
-
-        .capability-card h4 {
-            font-family: 'Playfair Display', serif;
-            font-size: 18px;
-            margin-bottom: 10px;
-            color: var(--primary);
-        }
-
-        .capability-card p {
-            font-size: 13px;
-            color: var(--muted);
-            line-height: 1.7;
-        }
-
-        .capability-metric {
-            font-family: 'Playfair Display', serif;
-            font-size: 28px;
-            font-weight: 700;
-            color: var(--secondary);
-            margin-bottom: 5px;
-        }
-
-        /* ========== WHY US ========== */
-        .why-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-            margin-top: 30px;
-        }
-
-        .why-block {
-            padding: 30px;
-            background: var(--white);
-            border: 1px solid var(--border);
-        }
-
-        .why-block h4 {
-            font-family: 'Playfair Display', serif;
-            font-size: 18px;
-            margin-bottom: 12px;
-            color: var(--primary);
-        }
-
-        .why-block p {
-            font-size: 14px;
-            color: var(--muted);
-            line-height: 1.7;
-        }
-
-        .why-list {
-            list-style: none;
-            margin-top: 15px;
-        }
-
-        .why-list li {
-            font-size: 14px;
-            color: var(--muted);
-            padding: 8px 0;
-            border-bottom: 1px solid var(--border);
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .why-list li::before {
-            content: '✓';
-            color: var(--secondary);
-            font-weight: 700;
-            font-size: 16px;
-        }
-
-        /* ========== FOOTER / CTA ========== */
+        /* ========== CTA ========== */
         .cta-section {
-            background: var(--dark-bg);
-            color: var(--white);
-            padding: 80px 60px;
+            background: var(--bg-cream);
+            padding: 100px 0;
             text-align: center;
         }
 
         .cta-section h2 {
             font-family: 'Playfair Display', serif;
-            font-size: 36px;
+            font-size: 40px;
             font-weight: 600;
-            margin-bottom: 20px;
+            margin-bottom: 24px;
         }
 
-        .cta-section h2 span {
-            color: var(--secondary);
+        .cta-section h2 em {
+            font-style: italic;
+            color: var(--gold);
         }
 
-        .cta-section p {
+        .cta-body {
             font-size: 16px;
-            color: rgba(255,255,255,0.6);
-            max-width: 600px;
-            margin: 0 auto 40px;
+            color: var(--text-secondary);
+            max-width: 520px;
+            margin: 0 auto 32px;
             line-height: 1.7;
         }
 
-        .cta-note {
-            font-size: 13px;
-            color: rgba(255,255,255,0.4);
-            margin-top: 30px;
-            font-style: italic;
-        }
-
-        .contact-grid {
-            display: flex;
-            justify-content: center;
-            gap: 60px;
-            margin-top: 40px;
-            padding-top: 30px;
-            border-top: 1px solid rgba(255,255,255,0.1);
-        }
-
-        .contact-item {
-            text-align: center;
-        }
-
-        .contact-label {
-            font-size: 11px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: var(--secondary);
-            margin-bottom: 8px;
-        }
-
-        .contact-value {
+        .cta-action {
             font-size: 15px;
-            color: rgba(255,255,255,0.8);
+            font-weight: 500;
+            color: var(--text);
+            margin-bottom: 24px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 16px 40px;
+            background: var(--text);
+            color: var(--bg);
+            font-size: 13px;
+            font-weight: 500;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background: var(--gold);
+            color: var(--text);
+        }
+
+        .cta-note {
+            margin-top: 32px;
+            font-size: 12px;
+            color: var(--text-light);
+            font-style: italic;
         }
 
         /* ========== DIVIDER ========== */
         .divider {
             height: 1px;
             background: var(--border);
-            max-width: 1100px;
+            max-width: 720px;
             margin: 0 auto;
         }
 
-        /* ========== PRINT STYLES ========== */
-        @media print {
-            body {
-                background: white;
+        /* ========== RESPONSIVE ========== */
+        @media (max-width: 640px) {
+            .container {
+                padding: 0 24px;
             }
-            .section {
-                page-break-inside: avoid;
-            }
+
             .hero {
-                page-break-after: avoid;
+                padding: 80px 0 60px;
             }
-            .cta-section {
-                page-break-before: avoid;
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            h2 {
+                font-size: 26px;
+            }
+
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .proof-stats {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+
+            .timeline {
+                flex-direction: column;
+                gap: 24px;
+            }
+
+            .timeline::before {
+                display: none;
+            }
+
+            .section {
+                padding: 60px 0;
             }
         }
 
-        @media (max-width: 768px) {
-            .hero { padding: 50px 25px; }
-            .hero h1 { font-size: 32px; }
-            .section { padding: 40px 25px; }
-            .problem-solution,
-            .audience-grid,
-            .models-grid,
-            .why-grid,
-            .capability-grid {
-                grid-template-columns: 1fr;
+        /* ========== PRINT ========== */
+        @media print {
+            .section {
+                page-break-inside: avoid;
+                padding: 50px 0;
             }
-            .hero-stats { flex-direction: column; gap: 25px; }
-            .process-steps { flex-direction: column; }
-            .process-steps::before { display: none; }
-            .contact-grid { flex-direction: column; gap: 25px; }
+
+            .card:hover,
+            .cta-button:hover {
+                transform: none;
+                box-shadow: none;
+            }
         }
     </style>
 <base target="_blank">
 </head>
 <body>
 
-    <!-- HERO -->
+    <!-- 01 — HOOK -->
     <section class="hero">
-        <div class="hero-content">
-            <div class="company-tag">Mapani Food Products</div>
-            <h1>Amlaprash:<br>A <span>Production-Proven</span> Product System for B2B Partners</h1>
-            <p class="hero-subtitle">
-                A ready-to-deploy, market-ready formulation built through 25,000+ kg of real-world production. 
-                Plug it into your business—without building from scratch.
-            </p>
-            <div class="hero-stats">
-                <div class="stat-item">
-                    <div class="stat-number">25,000+</div>
-                    <div class="stat-label">Kilograms Produced</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">23+</div>
-                    <div class="stat-label">Iterations to Stability</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">5 Tons</div>
-                    <div class="stat-label">Daily Target Capacity</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- WHAT WE SOLVE -->
-    <section class="section section-alt">
-        <div class="section-header">
-            <div class="section-number">The Problem We Solve</div>
-            <h2 class="section-title">Where Authenticity Meets Repeatability</h2>
-        </div>
-        <div class="section-body">
-            <p>Many great food products never scale. Many scalable products lose what made them worth consuming. Most break somewhere in between.</p>
-            <p><strong>We operate where authenticity meets repeatability.</strong> Amlaprash is built to hold both—without compromise.</p>
-        </div>
-        <div class="problem-solution">
-            <div class="ps-card">
-                <h3>The Market Gap</h3>
-                <p>Great products fail at scale. Scalable products lose soul. Businesses waste years and capital trying to bridge this gap alone—through trial, error, and expensive missteps.</p>
-            </div>
-            <div class="ps-card">
-                <h3>Our Approach</h3>
-                <p>Deep focus on one product system. Iterated through real production, not assumptions. A formulation that holds under industrial reality—batch after batch, market after market.</p>
-            </div>
+        <div class="container">
+            <span class="hero-tag">Mapani Food Products</span>
+            <h1>Launch a repeat-purchase wellness SKU<br><em>—without manufacturing.</em></h1>
+            <p class="hero-lead">A new premium category is opening up, but the advantage now is not discovery. It's speed. The brands that move early will define how this category is sold.</p>
+            <div class="hero-closing">The category is being built. The only question is— by whom.</div>
         </div>
     </section>
 
     <div class="divider"></div>
 
-    <!-- WHAT WE DO -->
+    <!-- 02 — PRODUCT -->
     <section class="section">
-        <div class="section-header">
-            <div class="section-number">What We Do</div>
-            <h2 class="section-title">Built to Work in the Market—Not Just on Paper</h2>
-        </div>
-        <div class="section-body">
-            <p>Amlaprash is a <strong>production-proven, market-ready formulation</strong> optimized through real-world iteration across three critical dimensions:</p>
-            <div class="audience-grid" style="margin-top: 25px;">
-                <div class="audience-item">
-                    <div class="audience-icon">01</div>
-                    <div class="audience-text"><strong>Batch Consistency</strong> under scale—every unit matches the last</div>
-                </div>
-                <div class="audience-item">
-                    <div class="audience-icon">02</div>
-                    <div class="audience-text"><strong>Palatability</strong> for repeat consumption—customers come back</div>
-                </div>
-                <div class="audience-item">
-                    <div class="audience-icon">03</div>
-                    <div class="audience-text"><strong>Cost Viability</strong> across multiple selling formats—margin that works</div>
-                </div>
-                <div class="audience-item">
-                    <div class="audience-icon">04</div>
-                    <div class="audience-text"><strong>Easy Integration</strong> into different selling formats and channels</div>
-                </div>
-            </div>
-            <p style="margin-top: 25px;">This allows Amlaprash to integrate easily into different selling formats, support repeat consumption and customer retention, and maintain consistency across batches and markets.</p>
+        <div class="container">
+            <span class="section-label">02 — Product</span>
+            <h2>What You're Selling</h2>
+            <p>A rich Amla-based daily blend your customers can take by the spoon.</p>
+            <p>Fits naturally into daily routines—easy to adopt, easy to repeat.</p>
+            <p><em>A familiar wellness format, adapted for modern D2C brands.</em></p>
         </div>
     </section>
 
     <div class="divider"></div>
 
-    <!-- JOURNEY -->
-    <section class="section section-alt">
-        <div class="section-header">
-            <div class="section-number">Our Journey</div>
-            <h2 class="section-title">From Home Recipe to Production System</h2>
-        </div>
-        <div class="section-body">
-            <p>What started as a home recipe didn't scale on day one—and that was the point.</p>
-        </div>
-        <div class="journey-timeline">
-            <div class="timeline-item">
-                <div class="timeline-year">2021</div>
-                <div class="timeline-text">Zero sales. One focus: figure out how to make a home recipe survive industrial reality. Initial 20 kg batches failed repeatedly.</div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-year">2022–2025</div>
-                <div class="timeline-text">Not guesswork, but iteration. Testing, failing, correcting, and refining—again and again. Over <strong>23 failed attempts</strong> before stabilization.</div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-year">2026</div>
-                <div class="timeline-text">Produced and shipped over <strong>25,000 kg of Amlaprash</strong> across multiple batches and iterations.</div>
-                <div class="timeline-highlight">
-                    Today, what we have is not just a recipe—but a production-stable system that holds under scale.
-                </div>
-            </div>
+    <!-- 03 — PROBLEM -->
+    <section class="section section-warm">
+        <div class="container">
+            <span class="section-label">03 — The Problem</span>
+            <h2>Expansion Slows Down</h2>
+            <p>You already know how to sell.</p>
+            <p>What slows you down is building the next product:</p>
+            <ul class="clean">
+                <li>Formulation takes time</li>
+                <li>Manufacturing becomes inconsistent</li>
+                <li>Trial-and-error is expensive</li>
+                <li>Scaling breaks what initially worked</li>
+            </ul>
+            <p><em>Most product ideas never reach reliable scale.</em></p>
         </div>
     </section>
 
     <div class="divider"></div>
 
-    <!-- WHO THIS IS FOR -->
+    <!-- 04 — OFFER -->
     <section class="section">
-        <div class="section-header">
-            <div class="section-number">Who This Is For</div>
-            <h2 class="section-title">Built to Move Fast With You</h2>
-        </div>
-        <div class="audience-grid">
-            <div class="audience-item">
-                <div class="audience-icon">✓</div>
-                <div class="audience-text">You already have a way to sell and want a <strong>proven product to plug in</strong></div>
-            </div>
-            <div class="audience-item">
-                <div class="audience-icon">✓</div>
-                <div class="audience-text">You want to <strong>launch without setting up manufacturing</strong></div>
-            </div>
-            <div class="audience-item">
-                <div class="audience-icon">✓</div>
-                <div class="audience-text">You want to <strong>expand your product line</strong> without trial-and-error</div>
-            </div>
-            <div class="audience-item">
-                <div class="audience-icon">✓</div>
-                <div class="audience-text">You're looking for a <strong>ready-to-integrate product</strong>—not something to build from scratch</div>
-            </div>
+        <div class="container">
+            <span class="section-label">04 — The Offer</span>
+            <h2>A Ready-to-Deploy System</h2>
+            <p>What if you didn't have to build the product at all?</p>
+            <p><strong>Amlaprash is not just a product. It's a production-ready SKU system.</strong></p>
+            <ul class="clean">
+                <li>Production-proven</li>
+                <li>Built for repeat consumption</li>
+                <li>Ready to integrate into existing brands</li>
+            </ul>
+            <p><em>Built for real market conditions—not assumptions.</em></p>
         </div>
     </section>
 
     <div class="divider"></div>
 
-    <!-- PARTNERSHIP MODELS -->
-    <section class="section section-alt">
-        <div class="section-header">
-            <div class="section-number">Partnership Models</div>
-            <h2 class="section-title">Four Ways to Work With Amlaprash</h2>
-        </div>
-        <div class="models-grid">
-            <div class="model-card">
-                <div class="model-tag">Fastest Entry</div>
-                <h3 class="model-title">White Labelling</h3>
-                <p class="model-desc">Launch Amlaprash under your own brand—without setting up manufacturing.</p>
-                <div class="model-roles">
-                    <div class="role-block">
-                        <h4>You</h4>
-                        <ul>
-                            <li>Branding</li>
-                            <li>Packaging design</li>
-                            <li>Sales & distribution</li>
-                        </ul>
-                    </div>
-                    <div class="role-block">
-                        <h4>We</h4>
-                        <ul>
-                            <li>Production</li>
-                            <li>Base formulation</li>
-                            <li>Quality consistency</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="model-card">
-                <div class="model-tag">Strategic Play</div>
-                <h3 class="model-title">Collaborative Development</h3>
-                <p class="model-desc">Customize Amlaprash for your audience, positioning, or channel.</p>
-                <div class="model-roles">
-                    <div class="role-block">
-                        <h4>You</h4>
-                        <ul>
-                            <li>Market understanding</li>
-                            <li>Target audience</li>
-                        </ul>
-                    </div>
-                    <div class="role-block">
-                        <h4>We</h4>
-                        <ul>
-                            <li>Formulation adaptability</li>
-                            <li>Production capability</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="model-card">
-                <div class="model-tag">Lowest Effort</div>
-                <h3 class="model-title">Distribution Partnership</h3>
-                <p class="model-desc">Sell Amlaprash using existing SKUs under Mapani / associated brands.</p>
-                <div class="model-roles">
-                    <div class="role-block">
-                        <h4>You</h4>
-                        <ul>
-                            <li>Selling</li>
-                            <li>Channel expansion</li>
-                        </ul>
-                    </div>
-                    <div class="role-block">
-                        <h4>We</h4>
-                        <ul>
-                            <li>Ready product</li>
-                            <li>Reliable supply</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="model-card">
-                <div class="model-tag">Volume Play</div>
-                <h3 class="model-title">Bulk Supply</h3>
-                <p class="model-desc">Procure Amlaprash in bulk for institutional or large-scale use.</p>
-                <div class="model-roles">
-                    <div class="role-block">
-                        <h4>Ideal For</h4>
-                        <ul>
-                            <li>Gifting programs</li>
-                            <li>Hospitality</li>
-                            <li>Corporate orders</li>
-                        </ul>
-                    </div>
-                    <div class="role-block">
-                        <h4>We Provide</h4>
-                        <ul>
-                            <li>Volume pricing</li>
-                            <li>Flexible formats</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+    <!-- 05 — PRODUCT DEPTH -->
+    <section class="section section-warm">
+        <div class="container">
+            <span class="section-label">05 — Product Depth</span>
+            <h2>Why It Works</h2>
+            <p>Built on Amla, supported by a curated blend of herbs and spices traditionally used for daily vitality.</p>
+            <p>Designed for daily use—driving habit, retention, and repeat purchase.</p>
+            <p><strong>This is not a novelty SKU. It's built for long-term consumption behavior.</strong></p>
         </div>
     </section>
 
     <div class="divider"></div>
 
-    <!-- GETTING STARTED -->
+    <!-- 06 — PROOF -->
     <section class="section">
-        <div class="section-header">
-            <div class="section-number">Getting Started</div>
-            <h2 class="section-title">Simple. Fast. Clear.</h2>
-        </div>
-        <div class="process-steps">
-            <div class="step">
-                <div class="step-number">1</div>
-                <div class="step-text">Share your business model or idea</div>
-            </div>
-            <div class="step">
-                <div class="step-number">2</div>
-                <div class="step-text">We align on feasibility and approach</div>
-            </div>
-            <div class="step">
-                <div class="step-number">3</div>
-                <div class="step-text">Sampling / initial batch</div>
-            </div>
-            <div class="step">
-                <div class="step-number">4</div>
-                <div class="step-text">Production and supply</div>
-            </div>
-        </div>
-        <div class="section-body" style="text-align: center; margin-top: 30px;">
-            <p><strong>If there's clarity, this moves quickly.</strong></p>
-        </div>
-    </section>
+        <div class="container">
+            <span class="section-label">06 — Proof</span>
+            <h2>Stability Over Time</h2>
+            <p>This system was not built in theory.</p>
+            <ul class="clean">
+                <li>23+ failed production iterations before stabilization</li>
+                <li>Early batches failed under real conditions</li>
+                <li>Process refined through repeated breakdowns</li>
+            </ul>
 
-    <div class="divider"></div>
+            <div class="proof-block">
+                <div class="proof-number">30,000+</div>
+                <div class="proof-unit">Kilograms</div>
+                <div class="proof-caption">Produced and shipped by 2026</div>
 
-    <!-- PRODUCTION CAPABILITY -->
-    <section class="section section-alt">
-        <div class="section-header">
-            <div class="section-number">Production & Capability</div>
-            <h2 class="section-title">Built for Reliability, Consistency, and Scale</h2>
-        </div>
-        <div class="capability-grid">
-            <div class="capability-card">
-                <div class="capability-metric">5 Tons</div>
-                <h4>Target Daily Capacity</h4>
-                <p>Scaling towards 5 tons per day by FY 2027–28</p>
-            </div>
-            <div class="capability-card">
-                <div class="capability-metric">100%</div>
-                <h4>Batch Monitoring</h4>
-                <p>Process control systems to minimize variation and handle deviations</p>
-            </div>
-            <div class="capability-card">
-                <div class="capability-metric">Flexible</div>
-                <h4>Packaging Formats</h4>
-                <p>Adaptable formats based on business model and requirement</p>
-            </div>
-        </div>
-        <div class="section-body" style="margin-top: 30px; text-align: center;">
-            <p><strong>Built through repeated execution—not assumptions.</strong></p>
-        </div>
-    </section>
-
-    <div class="divider"></div>
-
-    <!-- WHY MAPANI -->
-    <section class="section">
-        <div class="section-header">
-            <div class="section-number">Why Mapani</div>
-            <h2 class="section-title">Fewer Variables. More Control. Better Outcomes.</h2>
-        </div>
-        <div class="why-grid">
-            <div class="why-block">
-                <h4>Our Philosophy</h4>
-                <p>Most food businesses try to do everything—and lose control in the process. We chose the opposite. We don't diversify across categories. We focus deeply on one product system and refine it relentlessly.</p>
-            </div>
-            <div class="why-block">
-                <h4>What This Means for You</h4>
-                <ul class="why-list">
-                    <li>Higher process control</li>
-                    <li>Better consistency</li>
-                    <li>No shortcuts in formulation or production</li>
-                </ul>
-            </div>
-        </div>
-        <div class="why-grid" style="margin-top: 20px;">
-            <div class="why-block" style="background: var(--dark-bg); color: var(--white); border: none;">
-                <h4 style="color: var(--secondary);">You Don't Need To</h4>
-                <ul class="why-list" style="margin-top: 10px;">
-                    <li style="color: rgba(255,255,255,0.7); border-color: rgba(255,255,255,0.1);">Set up manufacturing</li>
-                    <li style="color: rgba(255,255,255,0.7); border-color: rgba(255,255,255,0.1);">Figure out formulation</li>
-                    <li style="color: rgba(255,255,255,0.7); border-color: rgba(255,255,255,0.1);">Go through trial-and-error</li>
-                    <li style="color: rgba(255,255,255,0.7); border-color: rgba(255,255,255,0.1);">Build systems from scratch</li>
-                </ul>
-            </div>
-            <div class="why-block" style="display: flex; align-items: center; justify-content: center; text-align: center;">
-                <div>
-                    <div style="font-family: 'Playfair Display', serif; font-size: 48px; color: var(--secondary); font-weight: 700;">1</div>
-                    <div style="font-size: 14px; color: var(--muted); margin-top: 10px;">Product.<br>Deep Focus.<br>Relentless Refinement.</div>
+                <div class="proof-stats">
+                    <div class="proof-stat">
+                        <div class="proof-stat-num">23+</div>
+                        <div class="proof-stat-label">Iterations</div>
+                    </div>
+                    <div class="proof-stat">
+                        <div class="proof-stat-num">2022</div>
+                        <div class="proof-stat-label">Started</div>
+                    </div>
+                    <div class="proof-stat">
+                        <div class="proof-stat-num">4 Yrs</div>
+                        <div class="proof-stat-label">To Stabilize</div>
+                    </div>
                 </div>
             </div>
+
+            <p style="margin-top: 32px;"><strong>This is not a concept. It's already survived production reality.</strong></p>
         </div>
     </section>
 
-    <!-- CTA / CONTACT -->
+    <div class="divider"></div>
+
+    <!-- 07 — ECONOMICS -->
+    <section class="section section-warm">
+        <div class="container">
+            <span class="section-label">07 — Economics</span>
+            <h2>Built to Compound</h2>
+            <p>Designed as a repeat consumption SKU:</p>
+            <ul class="clean">
+                <li>Fits premium pricing bands</li>
+                <li>Supports strong margin headroom</li>
+                <li>Built for retention and LTV growth</li>
+            </ul>
+            <p><strong>Not just for launch—but for sustained revenue.</strong></p>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- 08 — FIT -->
+    <section class="section">
+        <div class="container">
+            <span class="section-label">08 — Fit</span>
+            <h2>Works With Your Brand</h2>
+            <p>Amlaprash adapts to your positioning:</p>
+            <ul class="clean">
+                <li>Premium wellness SKU</li>
+                <li>Daily functional product</li>
+                <li>Flexible formats — jar, squeeze, gifting</li>
+            </ul>
+            <p><strong>The product stays consistent. Your brand defines how it is positioned.</strong></p>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- 09 — WHY US -->
+    <section class="section section-warm">
+        <div class="container">
+            <span class="section-label">09 — Why Us</span>
+            <h2>Skip the Failure Curve</h2>
+            <p>Most manufacturers can deliver a good first batch.</p>
+            <p>The real challenge starts after:</p>
+            <ul class="clean">
+                <li>Ingredient variation</li>
+                <li>Process inconsistency</li>
+                <li>Stability breakdowns</li>
+            </ul>
+            <p>We've already gone through that cycle.</p>
+            <p><strong>What you're plugging into is not a new product—but a stabilized system under production pressure.</strong></p>
+            <p><em>You skip the hardest part.</em></p>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- 10 — PARTNERSHIP -->
+    <section class="section">
+        <div class="container">
+            <span class="section-label">10 — Partnership Models</span>
+            <h2>How You Can Work With Us</h2>
+
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card-tag">Fastest Entry</div>
+                    <div class="card-title">White Label</div>
+                    <div class="card-sub">Launch under your brand</div>
+                    <div class="card-desc">Without building manufacturing.</div>
+                </div>
+                <div class="card">
+                    <div class="card-tag">Strategic</div>
+                    <div class="card-title">Collaborative Development</div>
+                    <div class="card-sub">Shape it for your audience</div>
+                    <div class="card-desc">Adapt format or positioning for your audience.</div>
+                </div>
+                <div class="card">
+                    <div class="card-tag">Lowest Effort</div>
+                    <div class="card-title">Distribution / Bulk</div>
+                    <div class="card-sub">Start immediately</div>
+                    <div class="card-desc">With ready SKUs or scale via supply.</div>
+                </div>
+            </div>
+
+            <p style="margin-top: 32px; text-align: center; font-size: 14px; color: var(--text-muted);"><em>Choose based on your current bandwidth.</em></p>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- 11 — ENTRY -->
+    <section class="section section-warm">
+        <div class="container">
+            <span class="section-label">11 — Entry</span>
+            <h2>Low-Friction Pilot</h2>
+            <p>No large upfront commitment needed.</p>
+            <p>Start with:</p>
+            <ul class="clean">
+                <li>Sample evaluation</li>
+                <li>Small pilot batch</li>
+                <li>Real-world testing</li>
+            </ul>
+            <p><strong>If it works → scale. If not → minimal downside.</strong></p>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- 12 — SPEED -->
+    <section class="section">
+        <div class="container">
+            <span class="section-label">12 — Speed</span>
+            <h2>Fast Execution</h2>
+            <p>Move from idea to batch quickly:</p>
+            <ol class="numbered">
+                <li>Share your use-case</li>
+                <li>Align on feasibility</li>
+                <li>Sample / pilot batch</li>
+                <li>Production & supply</li>
+            </ol>
+
+            <div class="timeline">
+                <div class="timeline-step">
+                    <div class="timeline-dot">01</div>
+                    <div class="timeline-label">Idea</div>
+                </div>
+                <div class="timeline-step active">
+                    <div class="timeline-dot">02</div>
+                    <div class="timeline-label">Sample</div>
+                    <div class="timeline-time">Under 14 days</div>
+                </div>
+                <div class="timeline-step active">
+                    <div class="timeline-dot">03</div>
+                    <div class="timeline-label">Batch</div>
+                    <div class="timeline-time">4–6 weeks</div>
+                </div>
+                <div class="timeline-step">
+                    <div class="timeline-dot">04</div>
+                    <div class="timeline-label">Scale</div>
+                </div>
+            </div>
+
+            <p style="margin-top: 32px;"><strong>No long cycles. No unnecessary friction.</strong></p>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- 13 — CTA -->
     <section class="cta-section">
-        <h2>Ready to <span>Evaluate Fit</span>?</h2>
-        <p>Amlaprash is available for immediate integration into your business model. If you're exploring how this fits into your brand, distribution, or offering—we can take it forward from there.</p>
-        <div style="font-size: 18px; font-weight: 600; color: var(--secondary); margin-bottom: 10px;">The next step is simple:</div>
-        <div style="font-size: 15px; color: rgba(255,255,255,0.7);">Evaluate fit and feasibility. If there is alignment, this can move to execution quickly.</div>
-        <div class="contact-grid">
-            <div class="contact-item">
-                <div class="contact-label">Phone</div>
-                <div class="contact-value">[Your Number]</div>
+        <div class="container">
+            <h2>Don't Overthink It—<em>Test It</em></h2>
+            <div class="cta-body">
+                <p>If this fits your business, the next step is simple.</p>
+                <p>Test it in your market. Share your use-case or WhatsApp [number] — fit is confirmed within 48 hours.</p>
             </div>
-            <div class="contact-item">
-                <div class="contact-label">WhatsApp</div>
-                <div class="contact-value">[Your Number]</div>
-            </div>
-            <div class="contact-item">
-                <div class="contact-label">Email</div>
-                <div class="contact-value">[Your Email]</div>
-            </div>
+            <div class="cta-action">From there, execution is straightforward.</div>
+            <a href="#" class="cta-button">Start the Conversation</a>
+            <div class="cta-note">Samples are shared for serious business inquiries.</div>
         </div>
-        <div class="cta-note">Samples are shared for serious business inquiries to evaluate product fit before moving forward.</div>
     </section>
 
 </body>
