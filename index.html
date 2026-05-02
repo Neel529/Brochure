@@ -5,6 +5,68 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Amlaprash — B2B Product System | Mapani Food Products</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;450;500;600&display=swap" rel="stylesheet">
+    /* ===== HOOK UPGRADE (SAFE ADD) ===== */
+
+.hero-inner {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    align-items: center;
+    gap: 60px;
+}
+
+.hero-text {
+    max-width: 520px;
+}
+
+.hero-image {
+    position: relative;
+    overflow: hidden;
+    border-radius: 6px;
+}
+
+.hero-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    animation: slowZoom 8s ease forwards;
+}
+
+/* ANIMATION */
+
+.fade-up {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 0.8s ease forwards;
+}
+
+.fade-up.delay-1 { animation-delay: 0.2s; }
+.fade-up.delay-2 { animation-delay: 0.4s; }
+.fade-up.delay-3 { animation-delay: 0.6s; }
+
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slowZoom {
+    from { transform: scale(1); }
+    to { transform: scale(1.05); }
+}
+
+/* MOBILE */
+
+@media (max-width: 640px) {
+    .hero-inner {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .hero-image {
+        margin-top: 20px;
+    }
+}
     <style>
         :root {
             --bg: #ffffff;
@@ -530,15 +592,42 @@
 <body>
 
     <!-- 01 — HOOK -->
-    <section class="hero">
-        <div class="container">
-            <span class="hero-tag">Mapani Food Products</span>
-            <h1>Launch a repeat-purchase wellness SKU<br><em>—without manufacturing.</em></h1>
-            <p class="hero-lead">The advantage now is not discovery. It's speed.</p>
-            <p class="hero-lead">Move fast. Plug into what already works.</p>
-            <div class="hero-closing">Brands are build on intelligent strategic decisons</div>
+<!-- 01 — HOOK (UPDATED SAFE) -->
+<section class="hero">
+    <div class="container">
+
+        <div class="hero-inner">
+
+            <!-- TEXT -->
+            <div class="hero-text">
+
+                <span class="hero-tag fade-up">Mapani Food Products</span>
+
+                <h1 class="fade-up delay-1">
+                    Launch a repeat-purchase wellness SKU<br>
+                    <em>—without manufacturing.</em>
+                </h1>
+
+                <p class="hero-lead fade-up delay-2">
+                    The advantage is speed.<br>
+                    Move fast. Plug into what already works.
+                </p>
+
+                <div class="hero-closing fade-up delay-3">
+                    Not everything needs to be built from scratch.
+                </div>
+
+            </div>
+
+            <!-- IMAGE -->
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1604908176997-4318f3eb3c1b">
+            </div>
+
         </div>
-    </section>
+
+    </div>
+</section>
 
     <div class="divider"></div>
 
